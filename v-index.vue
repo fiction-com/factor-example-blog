@@ -15,7 +15,7 @@ import { standardBlogIndex } from "@factor/plugin-blog"
 export default {
   components: {
     pageHeader: () => import("./page-header.vue"),
-    standardBlogIndex: setting("blog.components.blogIndex")
+    standardBlogIndex
   },
   data() {
     return {
