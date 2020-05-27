@@ -1,0 +1,48 @@
+{
+  "name": "factor-example-blog",
+  "description": "A basic blog example with Factor",
+  "author": "Andrew Powers <andrew@fiction.com>",
+  "private": true,
+  "main": "index",
+  "scripts": {
+    "dev": "npx factor dev",
+    "start": "npx factor start",
+    "build": "npx factor build",
+    "lint": "npm run eslint && npm run types",
+    "types": "tsc --skipLibCheck",
+    "eslint": "eslint --ext .ts,.js,.vue,.json ."
+  },
+  "dependencies": {
+    "@factor/core": "^1.0.0",
+    "@factor/plugin-sitemap": "^1.0.0",
+    "@factor/plugin-blog": "^1.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "@typescript-eslint/parser": "^2.8.0",
+    "eslint": "^6.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-json": "^2.0.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-unicorn": "^17.2.0",
+    "eslint-plugin-vue": "^6.0.0",
+    "prettier": "^1.17.1",
+    "prettier-eslint": "^9.0.0"
+  },
+  "factor": {
+    "app": {
+      "name": "Factor Blog",
+      "description": "Blog example built with Factor JS"
+    },
+    "load": [
+      "app",
+      "server"
+    ],
+    "admins": [
+      "arpowers@gmail.com"
+    ]
+  }
+}

@@ -34,6 +34,6 @@ Factor uses backing services to handle things like DB, image hosting and email. 
 
 ## What's Included
 
-This example adds `@factor/plugin-blog`, includes it on some custom routes and customizes it with [settings](https://factor.dev/docs/settings). 
+This example adds `@factor/plugin-blog` [Overview](https://factor.dev/plugin/standard-blog), includes it on some [custom routes](https://factor.dev/docs/routes) and customizes it with [settings](https://factor.dev/docs/settings). 
 
 Using the settings we override a component from the plugin; which is the recommended way of doing advanced customization. 
