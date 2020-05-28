@@ -78,12 +78,42 @@ export default {
       padding: 1rem;
     }
 
+    .entry-title{
+      font-size: 3em;
+    }
+
     .featured-image{
       max-width: 64rem;
+      height: 24em;
       margin: 3rem auto;
 
       @media (max-width: 900px) {
         border-radius: 0;
+      }
+    }
+
+    .social-share{
+      width: fit-content;
+    }
+
+    .author-bio{
+      .author-card .text{
+        position: relative;
+        padding: 2rem;
+        background: var(--color-bg-contrast);
+        border-radius: 8px;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: -6px;
+            top: 35px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 6px 6px 6px 0;
+            border-color: transparent var(--color-bg-contrast) transparent transparent;
+        }
       }
     }
   }
