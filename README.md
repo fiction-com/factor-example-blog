@@ -2,6 +2,21 @@
 
 This is an example Factor application that creates a simple blog. In addition, it customizes a few things so you can get the hang of how customization works. 
 
+## Features 
+
+- A fully functional, dynamic blog that can be managed on the dashboard
+- Custom layout and design
+- Basic lint/typescript setup 
+- Bonus: Dutch translation added of English text in plugin ([localization](https://factor.dev/docs/localization))
+
+## Techniques Used
+
+- Setting custom CSS variables. Learn about [styles](https://factor.dev/docs/styles) and [standard CSS variables](https://factor.dev/docs/css-variables).
+- Adding custom routes via the index.ts [main file](https://factor.dev/docs/main-files)
+- Importing the blog components directly into the route components for easy customization (single, index)
+- Overriding components from the [blog plugin](https://factor.dev/plugin/standard-blog) (advanced customization)
+
+
 ## Running This Example
 
 First thing you should do is clone the repo: 
