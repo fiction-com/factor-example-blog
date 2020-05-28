@@ -3,6 +3,7 @@ export default {
     disableAutoRoutes: true,
     indexRoute: "/",
     postRoute: "/entry",
+    limit: 4,
     categories: [
       "drama",
       "horror",
