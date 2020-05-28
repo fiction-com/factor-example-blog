@@ -36,7 +36,7 @@
     "installed": false,
     "installRoutine": "account",
     "app": {
-      "name": "Factor Blog",
+      "name": "Factor Blog Example",
       "description": "Blog example built with Factor JS"
     },
     "load": [
