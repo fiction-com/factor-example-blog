@@ -15,13 +15,14 @@ export default {
       "thriller",
       "romantic-comedy"
     ],
-    layout: {
-      index: ["featuredImage", "title", "subtitle", "meta"],
-      single: ["returnLink", "title", "meta", "entry", "social", "authorBio"],
-      meta: ["authorDate", "tags"]
-    },
+    // layout: {
+    //   index: ["featuredImage", "title", "subtitle", "meta"],
+    //   single: ["returnLink", "title", "meta", "entry", "social", "authorBio"],
+    //   meta: ["authorDate"]
+    // },
     components: {
-      blogIndex: (): Promise<any> => import("./v-blog-index-override.vue")
+      blogIndex: (): Promise<any> => import("./v-blog-index-override.vue"),
+      blogSingle: (): Promise<any> => import("./v-blog-single-override.vue")
     }
   }
 }

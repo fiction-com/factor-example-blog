@@ -6,10 +6,28 @@
     <div v-else-if="blogPosts.length > 0" class="post-index">
       <return-link v-if="tag || page > 1" />
       <div v-for="post in blogPosts" :key="post._id" class="post">
+
         <featured-image :post-id="post._id" />
-        <post-title :post-id="post._id" />
-        <sub-title :post-id="post._id" />
-        <post-meta :post-id="post._id" />
+
+        <div class="post-content">
+
+          <div v-if="post.category.length > 0" class="entry-categories">
+            <factor-link
+              v-for="(category, ci) in post.category"
+              :key="ci"
+              class="entry-category"
+              :path="setting('blog.indexRoute')"
+              :query="{ category }"
+            >{{ category }}</factor-link>
+          </div>
+          <post-title :post-id="post._id" />
+          <sub-title :post-id="post._id" />
+
+          <factor-link
+            :path="postLink(post._id)"
+          > Read More &rarr; </factor-link>
+        </div>
+        
       </div>
       <pagination :post-type="postType" />
     </div>
@@ -22,16 +40,16 @@
   </div>
 </template>
 <script lang="ts">
-import { factorSpinner } from "@factor/ui"
-import { setting, stored } from "@factor/api"
+import { factorSpinner, factorLink } from "@factor/ui"
+import { setting, stored, postLink } from "@factor/api"
 export default {
   components: {
     factorSpinner,
+    factorLink,
     pagination: setting("blog.components.pagination"),
     returnLink: setting("blog.components.returnLink"),
     featuredImage: setting("blog.components.featuredImage"),
     postTitle: setting("blog.components.title"),
-    postMeta: setting("blog.components.meta"),
     subTitle: setting("blog.components.subtitle")
   },
   data() {
@@ -72,7 +90,8 @@ export default {
   },
 
   methods: {
-    setting
+    setting,
+    postLink
   }
 }
 </script>
@@ -80,14 +99,94 @@ export default {
 <style lang="less" scoped>
 .blog-entries {
   .post-index {
-    max-width: 44rem;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 2rem;
+
+    @media (max-width: 900px) {
+      display: block;
+    }
+
     .post {
-      margin-bottom: 4em;
-      &:last-child {
-        margin-bottom: 2em;
+      border-radius: .35rem;
+      transition: all .5s cubic-bezier(.165,.84,.44,1);
+
+      &:hover{
+        transform: translateY(-.25rem);
       }
+      .post-content{
+        padding: 2rem;
+      }
+      .featured-image{
+        margin-bottom: 0;
+        border-radius: .35rem .35rem 0 0;
+      }
+      .entry-categories{
+        text-transform: uppercase;
+        letter-spacing: 2px;    
+        font-size: .8rem;
+        margin-bottom: 1rem;
+      }
+      .entry-title{
+        font-size: 1.4em;
+      }
+      .entry-subtitle{
+        font-size: 1em;
+      }
+      
+      .entry-meta{
+        display: block;
+        margin-top: 1.5rem;
+      }
+
+      @media (min-width: 900px) {
+        &:first-child{
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          position: relative;
+          overflow: hidden;
+          grid-column-start: span 3;
+
+          .featured-image{
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: .35rem;
+          }
+
+          .post-content{
+            flex: none;
+            align-self: stretch;
+            width: 50%;
+            z-index: 10;
+            margin: 1rem;
+            padding: 3rem;
+            background: var(--color-bg-contrast);
+            border-radius: .35rem;
+          }
+          .entry-title{
+            font-size: 2em;
+          }
+          .entry-subtitle{
+            font-size: 1.2em;
+          }
+        }
+      }
+
+      @media (max-width: 900px) {
+        margin-bottom: 4rem;
+      }
+    }
+    .pagination{
+      grid-column-start: span 3;
     }
   }
   .posts-not-found,
