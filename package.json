@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.17.0",
-    "@typescript-eslint/parser": "^2.8.0",
+    "@typescript-eslint/parser": "^3.0.0",
     "eslint": "^6.0.0",
     "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-html": "^6.0.0",
@@ -30,7 +30,7 @@
     "eslint-plugin-unicorn": "^17.2.0",
     "eslint-plugin-vue": "^6.0.0",
     "prettier": "^1.17.1",
-    "prettier-eslint": "^9.0.0"
+    "prettier-eslint": "^10.0.0"
   },
   "factor": {
     "installed": false,
