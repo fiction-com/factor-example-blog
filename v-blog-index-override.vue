@@ -5,7 +5,7 @@
     </div>
     <div v-else-if="blogPosts.length > 0" class="post-index">
       <return-link v-if="tag || page > 1" />
-      <div v-for="post in blogPosts" :key="post._id" class="post">
+      <div v-for="(post, pi) in blogPosts" :key="post._id" class="post">
 
         <featured-image :post-id="post._id" />
 
@@ -21,11 +21,15 @@
             >{{ category }}</factor-link>
           </div>
           <post-title :post-id="post._id" />
+
           <sub-title :post-id="post._id" />
 
           <factor-link
             :path="postLink(post._id)"
           > Read More &rarr; </factor-link>
+
+          <author-date v-if="pi === 0" :post-id="post._id" />
+          
         </div>
         
       </div>
@@ -50,7 +54,8 @@ export default {
     returnLink: setting("blog.components.returnLink"),
     featuredImage: setting("blog.components.featuredImage"),
     postTitle: setting("blog.components.title"),
-    subTitle: setting("blog.components.subtitle")
+    subTitle: setting("blog.components.subtitle"),
+    authorDate: setting("blog.components.authorDate"),
   },
   data() {
     return {
@@ -135,6 +140,10 @@ export default {
       }
       .entry-subtitle{
         font-size: 1em;
+      }
+
+      .widget-author-date{
+        margin-top: 2rem;
       }
       
       .entry-meta{
