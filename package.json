@@ -42,6 +42,10 @@
     "load": [
       "app",
       "server"
+    ],
+    "admins": [
+      "andrew@fiction.com",
+      "ray@fiction.com"
     ]
   }
 }
