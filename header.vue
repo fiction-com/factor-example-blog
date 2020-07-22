@@ -89,7 +89,7 @@ export default {
       text-transform: uppercase;
       opacity: 0.3;
       font-size: 0.8em;
-      line-height: 1;
+      line-height: normal;
     }
   }
   .fiction-icon {
