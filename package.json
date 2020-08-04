@@ -33,8 +33,6 @@
     "prettier-eslint": "^10.0.0"
   },
   "factor": {
-    "installed": false,
-    "installRoutine": "account",
     "app": {
       "name": "Factor Blog Example",
       "description": "Blog example built with Factor JS"
@@ -45,6 +43,7 @@
     ],
     "admins": [
       "andrew@fiction.com",
+      "ray@fiction.com",
       "ray@fiction.com"
     ]
   }
