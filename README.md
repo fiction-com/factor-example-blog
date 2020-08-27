@@ -60,7 +60,7 @@ npx factor dev # or yarn factor dev
 
 ## Services
 
-Factor uses backing services to handle things like DB, image hosting and email. If you'd like to turn this example into a production app, you'll need to [set those up as well](https://factor-dev/docs/services-setup).
+Factor uses backing services to handle things like DB, image hosting and email. If you'd like to turn this example into a production app, you'll need to [set those up as well](https://factor.dev/docs/services-setup).
 
 ## What's Included
 
